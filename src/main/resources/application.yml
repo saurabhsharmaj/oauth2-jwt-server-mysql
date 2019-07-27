@@ -1,0 +1,22 @@
+server:
+  port: 8000
+
+security:
+  jwt:
+    key-store: classpath:keystore.jks
+    key-store-password: letmein
+    key-pair-alias: mytestkey
+    key-pair-password: changeme
+
+spring:
+  jpa:
+    hibernate.ddl-auto: update
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/mir?useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
